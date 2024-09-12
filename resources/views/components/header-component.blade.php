@@ -19,12 +19,9 @@
                 </div>
                 <div class="col-xl-6 col-lg-4">
                     <div class="text-center">
-                        <div id="news-flash" class="d-inline-block">
+                        <div id="" class="d-inline-block">
                             <ul>
-                                <li>Get great devices up to 50% off <a href="shop.html">View details</a></li>
-                                <li>Supper Value Deals - Save more with coupons</li>
-                                <li>Trendy 25silver jewelry, save up 35% off today <a href="shop.html">Shop now</a>
-                                </li>
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, earum.</li>
                             </ul>
                         </div>
                     </div>
@@ -54,7 +51,7 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="index.html"><img src="assets/imgs/logo/logo.png" alt="logo"></a>
+                    <a href="index.html"><img src="{{asset('assets/imgs/logo/logo.png')}}" alt="logo"></a>
                 </div>
                 <div class="header-right">
                     <x-header-search-component/>
@@ -272,9 +269,9 @@
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
                         <nav>
                             <ul>
-                                <li><a class="active" href="/">Home </a></li>
+                                <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="/">Home</a></li>
                                 <li><a href="about.html">About</a></li>
-                                <li><a href="{{ route('shop') }}">Shop</a></li>
+                                <li><a class="{{ request()->is('shop') ? 'active' : '' }}" href="{{ route('shop') }}">Shop</a></li>
                                 <li class="position-static"><a href="#">Our Collections <i class="fi-rs-angle-down"></i></a>
                                     <ul class="mega-menu">
                                         <li class="sub-mega-menu sub-mega-menu-width-22">

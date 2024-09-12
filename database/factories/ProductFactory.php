@@ -14,8 +14,10 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        $product_name = $this->faker->unique()->words($nb = 6, $asText = true);
+        $product_name = $this->faker->unique()->words(3, true); // 3 kata produk
         $slug = Str::slug($product_name, '-');
+
+        static $counter = 1;
         return [
             'name' => $product_name,
             'slug' => $slug,
@@ -25,7 +27,7 @@ class ProductFactory extends Factory
             'SKU' => 'PRD' . $this->faker->unique()->numberBetween(100, 500),
             'stock_status' => 'instock',
             'quantity' => $this->faker->numberBetween(10, 50),
-            'image' => 'product-' . $this->faker->numberBetween(1, 16),
+            'image' => 'product-' . $counter++,
             'category_id' => $this->faker->numberBetween(1, 5)
         ];
     }

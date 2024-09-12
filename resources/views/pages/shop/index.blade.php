@@ -84,7 +84,7 @@
                             $witems = Cart::instance('wishlist')->content()->pluck('id');
                             @endphp --}}
 
-                            {{-- @foreach($products as $product)
+                            @foreach($products as $product)
 
                             <div class="col-lg-4 col-md-4 col-6 col-sm-6">
                                 <div class="product-cart-wrap mb-30">
@@ -121,11 +121,11 @@
                                         </div>
                                         <div class="product-action-1 show">
 
-                                            @if($witems->contains($product->id))
+                                            {{-- @if($witems->contains($product->id))
                                             <a aria-label="Remove To Wishlist" class="action-btn hover-up wishlisted" wire:click.prevent="removeFromWishlist({{$product->id}})"><i class="fi-rs-heart"></i></a>
                                             @else
                                             <a aria-label="Add To Wishlist" class="action-btn hover-up" wire:click.prevent="addToWishlist({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})"><i class="fi-rs-heart"></i></a>
-                                            @endif
+                                            @endif --}}
 
                                             <a aria-label="Add To Cart" class="action-btn hover-up" wire:click.prevent="store({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
@@ -133,7 +133,7 @@
                                 </div>
                             </div>
 
-                            @endforeach --}}
+                            @endforeach
 
                         </div>
                         <!--pagination-->
